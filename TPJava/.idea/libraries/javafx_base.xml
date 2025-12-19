@@ -12,6 +12,8 @@
       <root url="jar://$PROJECT_DIR$/../javafx/lib/jdk.jsobject.jar!/" />
       <root url="jar://$PROJECT_DIR$/../javafx/lib/jfx.incubator.input.jar!/" />
       <root url="jar://$PROJECT_DIR$/../javafx/lib/jfx.incubator.richtext.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../libJson/javax.json-1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../libJson/javax.json-api-1.1.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

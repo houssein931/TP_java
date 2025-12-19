@@ -51,7 +51,7 @@ public class World {
                             // System.err.println("Erreur de format de nombre pour la ligne: " + s);
                         }
                     }
-                    // -- Fin du code à compléter --
+
                 }
                 s = buf.readLine(); // Lit la ligne suivante
             }
