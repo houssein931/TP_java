@@ -31,3 +31,15 @@ affiche ses informations en console,
 ajoute une boule rouge en 3D sur la position correspondante à la surface de la Terre.
 Marqueurs synchronisés à la rotation :
 Les sphères colorées (boules rouges) représentant les aéroports « marqués » sont désormais intégrées dans un même groupe rotatif que la Terre pour tourner avec elle.
+
+
+TP du 19/12
+
+Durant cette séance, je me suis concentré sur l'intégration des données réelles (Live Data) pour connecter notre globe 3D à l'API AviationStack. L'objectif était de remplacer les données statiques par de vrais vols en cours. J'ai commencé par modifier la classe Flight pour y ajouter un attribut correspondant à l'aéroport de départ, ce qui permet désormais de relier géographiquement un vol à son origine.
+Ensuite, j'ai développé la classe JsonFlightFiller pour traiter les réponses de l'API. En utilisant la bibliothèque javax.json, j'ai mis en place le parsing du flux JSON pour extraire les informations essentielles comme les numéros de vol, les dates et surtout les codes IATA. Cette classe fait le lien avec notre classe World pour retrouver les objets Aeroport correspondants et générer la liste des vols.
+Pour la partie graphique dans la classe Earth, j'ai ajouté la gestion des marqueurs visuels. Lorsqu'on sélectionne une destination par un clic droit, elle s'affiche en rouge. Le programme récupère ensuite la liste des vols arrivant à cet endroit et matérialise tous les aéroports de provenance par des sphères jaunes directement sur le globe.
+Enfin, j'ai traité le problème du blocage de l'interface lors des appels réseau. Comme la requête vers l'API met du temps à répondre et figeait l'animation de la Terre, j'ai déplacé cette opération dans un Thread séparé. J'ai utilisé la méthode Platform.runLater pour permettre à ce processus d'arrière-plan de mettre à jour l'interface graphique sans causer d'erreurs, ce qui assure une navigation fluide pendant le chargement des données.
+
+
+
+
